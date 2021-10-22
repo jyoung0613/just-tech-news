@@ -6,7 +6,9 @@ const sequelize = require('./config/connection');
 const path = require('path');
 // added to use handlebars for html
 const exphbs = require('express-handlebars');
-const hbs = exphbs.create({});
+const helpers = require('./utils/helpers');
+const hbs = exphbs.create({ helpers });
+
 // adding express-session and sequelize store
 const session = require('express-session');
 
